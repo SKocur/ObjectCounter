@@ -54,7 +54,7 @@
           <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">Object Counter</span>
             <nav class="mdl-navigation">
-              <a class="mdl-navigation__link" href="https://github.com/SKocur/ObjectCounter">Source Code<</a>
+              <a class="mdl-navigation__link" href="https://github.com/SKocur/ObjectCounter">Source Code</a>
             </nav>
           </div>
           <main class="mdl-layout__content">
@@ -81,6 +81,13 @@
                       
                     </ul>
                     
+                    <form enctype="multipart/form-data" method="post">{% csrf_token %}
+                        Choose image which will be processed <input name="input_image" id="input_image" type="file" accept="image/*"><br>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="margin: 15px 15px 15px 15px">
+                          Upload and process
+                        </button>
+                    </form>
+                    Quantity of objects: {{ data }}
                   </div>
                 </div>
             </div>
