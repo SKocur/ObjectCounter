@@ -81,7 +81,7 @@
                       
                     </ul>
                     
-                    <form enctype="multipart/form-data" method="post">{% csrf_token %}
+                    <form name="form_process_image" enctype="multipart/form-data" onsubmit="return validateForm()" method="post">{% csrf_token %}
                         Choose image which will be processed <input name="input_image" id="input_image" type="file" accept="image/*"><br>
                         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="margin: 15px 15px 15px 15px">
                           Upload and process
@@ -96,5 +96,15 @@
             </div>
           </main>
         </div>
+        
+        <script>
+            function validateForm() {
+                var x = document.forms["form_process_image"]["input_image"].value;
+                if (x == "") {
+                    alert("You have to upload file!");
+                    return false;
+                }
+            }
+        </script>
     </body>
 </html>
